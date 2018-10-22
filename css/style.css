@@ -1,0 +1,593 @@
+*{
+  margin:0;
+  padding: 0;
+}
+
+html, body{
+  min-height: 100% !important;
+  height: 100%;
+}
+
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+ul{
+  list-style:none;
+}
+
+#loader {
+  background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  z-index: 10000;
+}
+
+.error {
+  position: fixed;
+  width: auto;
+  padding: 10px;
+  right: 10px;
+  top: 130px;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 10000;
+}
+
+.hide {
+  display: none !important;
+}
+
+.green {
+  background-color: rgb(5, 146, 64) !important;
+}
+
+.red {
+  background-color: rgb(187, 48, 24) !important;
+}
+
+.color{
+  color: rgb(32, 168, 14);
+}
+
+.header {
+  display: none;
+}
+
+#side-nav{
+  width: 18%;
+  background-color: rgb(23, 128, 9);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+#side-nav>#nav{
+  text-align: center;
+  margin:30px;
+}
+
+#nav>a>img{
+  padding:5px;
+  border: 1px solid #fff;
+  border-radius:5px;
+}
+
+#side-nav ul {
+  text-align: center;
+}
+
+#side-nav li a{
+  display: block;
+  color: #fff;
+  padding: 16px 16px;
+  text-decoration: none;
+}
+
+.side{
+  margin-left:18%;
+  padding:1px 16px;
+}
+
+#main-nav {
+  height:30px;
+  padding:20px;
+  box-shadow:0 3px rgba(59, 59, 59, 0.767);
+}
+
+#main-nav ul li{
+  margin-right:30px;
+  display: inline-block;
+}
+
+.head-nav li:nth-child(1) img{
+  width: 40px;
+  height: 40px;
+}
+
+.head-nav li:nth-child(2){
+  font-size:40px;
+  text-transform: capitalize;
+}
+
+.head-nav li:nth-child(3){
+  float:right;
+  font-size:20px;
+}
+
+.dropdown-nav {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: -3px;
+  left: 0;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.dropdown-nav-true {
+  display: inherit;
+  transition: 0.5s all;
+}
+
+.dropdown-nav ul {
+  display: inherit !important;
+}
+
+.dropdown-nav ul li {
+  display: block !important;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.dropdown-nav ul li a {
+  color: rgb(32, 168, 14);
+  text-decoration: none;
+}
+
+.head-text{
+  padding:40px;
+  font-size:40px;
+  color: #333;
+}
+
+.head-text-2{
+  padding:10px;
+  font-size:20px;
+  color: #333;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.dates {
+  float:right;
+  padding: 30px;
+}
+
+.elections, .candidates {
+  padding:20px;
+  padding-top: 80px;
+  margin-bottom: 40px;
+}
+
+
+.card{
+  width:25%;
+  display: inline-block;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+.card>img{
+  width:100%;
+  height:200px;
+  border-radius: 10px;
+}
+
+.card-text{
+  padding:0 20px;
+}
+
+.card-text p{
+  padding:10px 0;
+  font-size:16px;
+  font-style: italic;
+}
+
+.card-text span{
+  float: right;
+}
+
+.card-btn{
+  text-align: center;
+  padding:10px 0;
+}
+
+.card-btn a{
+  padding:8px 25px;
+  background-color: rgb(32, 168, 14);
+  color:#fff;
+  font-size:20px;
+  border-radius:10px;
+  border: none;
+  text-decoration: none;
+}
+
+.card-btn a:hover{
+  background-color:rgb(32, 32, 32);
+  cursor:pointer;
+}
+
+footer {
+  background-color:rgba(0, 0, 0, 0.856);
+  color:#fff;
+  text-align: center;
+  padding: 10px;
+}
+
+footer .copyright{
+  font-size:30px;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  top: 0;
+  z-index: 1000;
+  padding-top: 100px;
+  display: none;
+  transition: 0.5s all;
+}
+
+.modal-show {
+  display: inherit;
+}
+
+.modal-content {
+  background-color: #ddd;
+  width: 400px;
+  padding: 20px;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-content ul li {
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 10px;
+  color: rgb(0, 140, 255);
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/* Login Page */
+.login{
+  height: 100%;
+  background-image: url('../img/1.jpeg');
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  overflow: auto;
+}
+
+.adminlogin {
+  background-image: url('../img/flag-img.jpg');
+}
+
+.login-heading {
+  color: #fff;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.login-form{
+  width: 35%;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  height: auto;
+  background-color: #fff;
+  position: relative;
+  top:200px;
+  margin:0 450px;
+}
+
+.login-form img {
+  width:40px;
+  height:40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+}
+
+.login-form h2{
+  text-align: center;
+  padding:15px 20px;
+  font-size:30px;
+  width:45%;
+  display:inline-block;
+}
+
+.login-form label{
+  display: block;
+  padding:10px;
+  font-size:20px;
+}
+
+.login-div {
+  margin-top: 100px;
+  width: 400px;
+}
+
+.login-div h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.login-div p {
+  color: #eee;
+  margin-bottom: 10px;
+}
+
+.login-div a {
+  color: rgb(0, 140, 255);
+  text-decoration: none;
+}
+
+.login-div input {
+  background-color: transparent;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(23, 128, 9);
+  color: #fff;
+}
+
+.login-div button {
+  background-color: rgb(23, 128, 9);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  outline: none;
+}
+
+.form-group{
+  padding: 10px 40px;
+}
+
+.form-input{
+  width:50%;
+  padding:10px;
+  height: 20px;
+  border-radius:10px;
+  border:0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.login-form button {
+  padding:15px 45px;
+  background-color:  rgb(32, 168, 14);
+  color: #fff;
+  margin:20px 0 10px 180px;
+  border-radius: 10px;
+  border:none;
+  transition: 0.5s all;
+  font-size: 15px;
+}
+
+.login-form button:hover {
+  background-color:rgb(32, 32, 32);
+  cursor:pointer;
+  font-size: 15px;
+  transform: scale(1.2);
+}
+
+.head-tab ul li {
+  font-weight: bold;
+}
+
+.tab{
+  margin:10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  transition: 0.5s all;
+}
+
+.tab:hover{
+  transform: scale(1.03);
+}
+
+.tab ul li {
+  display: inline-block;
+  padding: 10px 10px;
+  width: 150px;
+}
+
+.candidate-btn{
+  padding:6px 30px;
+  background-color: rgb(32, 168, 14);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.candidate-btn:hover {
+  background-color: #333;
+}
+
+/** Admin Pages **/
+
+.candidate-btn, .btn, .add-form>button{
+  padding:6px 30px;
+  background-color: rgb(32, 168, 14);
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.candidate-btn:hover {
+  background-color: #000;
+}
+
+.btn{
+  padding:12px 18px;
+  float:right;
+  margin-top:30px;
+  margin-right: 30px;
+}
+
+.btn:hover, .add-form>button:hover{
+  background-color: rgba(0, 0, 0, 0.842);
+  cursor: pointer;
+}
+
+#inline {
+  display: inline-block;
+  width:fit-content;
+}
+
+#ongoing-election-section{
+  display: block;
+}
+
+#add-election-section{
+  display: none;
+}
+
+.add-form input, .add-form select{
+  height: 40px;
+  width: 30%;
+  border-radius: 10px;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.add-form .form-group:nth-child(1) input{
+  text-align: left;
+}
+
+.add-form button{
+  padding: 15px 80px;
+  margin:20px 40px;
+}
+
+.badge{
+  background-color: rgb(32, 168, 14);
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+#add-candidate{
+  margin-top: -55px;
+  float: right;
+}
+
+#candidates-section{
+  display: block;
+}
+
+#add-candidate-section{
+  display: none;
+}
+
+.form-text{
+  padding:20px;
+}
+
+@media (max-width:600px) {
+  .header {
+    display: inherit;
+  }
+  .logo {
+    margin-left: 10px;
+    margin-top: 5px;
+  }
+  #main-nav {
+    width: 100%;
+    height: 50px;
+    padding: 0;
+    background-color: rgb(23, 128, 9);
+    position: fixed;
+    z-index: 10;
+  }
+  #nav-header {
+    margin-top: -42px;
+    padding-right: 20px;
+    float: right;
+  }
+  #main-nav ul {
+    display: none;
+  }
+  #side-nav{
+    display: none;
+  }
+  .head-text {
+    font-size: 25px;
+    padding: 0;
+    padding-top: 80px;
+    text-align: center;
+  }
+  .side {
+    margin-left: 0;
+    padding: 0;
+  }
+  .card {
+    width: 100%;
+    margin-left: 0;
+  }
+  .card img {
+    height: unset;
+  }
+  .login-div {
+    width: 300px;
+  }
+  .login-div input {
+    padding-right: 0;
+  }
+  .login-div h3 {
+    font-size: 18px;
+  }
+  .login-div p {
+    font-size: 14px;
+  }
+  .error {
+    width: 100%;
+    top: unset;
+    right: 0;
+    bottom: 5px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+  }
+  .modal-content {
+    width: 300px;
+  }
+}
